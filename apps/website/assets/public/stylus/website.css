@@ -1,21 +1,56 @@
 a {
-  color: #049d00;
+  color: #3c0;
 }
 header {
   text-align: center;
-  padding: 1em 0;
+  padding: 2em 0;
 }
 header h1 {
   margin-bottom: 1em;
-  font-size: 1.2em;
-  text-transform: uppercase;
+}
+header h1 a,
+header h1 a:hover {
+  text-decoration: none;
+  color: #000;
 }
 .search-info {
   margin-bottom: 10px;
 }
-.package-small {
-  border: 1px solid #f5f5f5;
-  padding: 10px;
-  height: 130px;
+.package {
+  position: relative;
   margin-bottom: 20px;
+  background: #fcfcfc;
+  border: 1px solid #ececec;
+  padding: 10px;
+}
+.package.small {
+  height: 110px;
+}
+.package.small h3 {
+  font-weight: normal;
+  font-size: 1.5em;
+  margin-bottom: 0.5em;
+}
+.package.small h3 .version {
+  font-size: 0.8em;
+  color: #c0c0c0;
+}
+.package.small .author {
+  font-size: 0.9em;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  color: #c0c0c0;
+}
+.package.small .description {
+  height: 3em;
+  overflow: hidden;
+  margin-bottom: 1em;
+}
+.package.small .tags {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  height: 20px;
+  overflow: hidden;
 }

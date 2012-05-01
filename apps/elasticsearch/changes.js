@@ -1,9 +1,10 @@
 var follow = require('follow');
 var requestEs = require('./request').requestEs;
 var couchdb = require('../../settings').couchdb;
+var map = require('./map');
 
 
-var url = "http://" + couchdb.host + ':' + couchdb.port + couchdb.path;
+var url = "http://" + couchdb.host + couchdb.path;
 
 follow( { db: url, include_docs: true }, function(err, change){
 
@@ -16,18 +17,7 @@ follow( { db: url, include_docs: true }, function(err, change){
 
     var doc = change.doc;
 
-    var tags = function(doc){
-      if (doc['dist-tags'] && doc['dist-tags'].latest) {
-        return doc.versions[doc['dist-tags'].latest].tags || [];
-      } else {
-        return [];
-      };
-    };
-
-    var package = JSON.stringify({
-      name: doc._id,
-      tags: tags(doc)
-    });
+    var package = JSON.stringify( map(doc) );
 
     requestEs(change, 'PUT', package);
 

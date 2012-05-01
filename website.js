@@ -21,8 +21,9 @@ app.configure(function(){
 
 // Routes
 
-require('./apps/search/routes').init( app );
-require('./apps/errors/routes').init( app ); //Need to be last
+require('./apps/search/routes'  ).init( app );
+require('./apps/packages/routes').init( app );
+require('./apps/errors/routes'  ).init( app ); //Need to be last
 
 
 // Helpers

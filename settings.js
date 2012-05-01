@@ -1,9 +1,8 @@
 module.exports = {
 
   couchdb: {
-    host: '0.0.0.0',
-    port: '5984',
-    path: '/npm'
+    host: 'isaacs.iriscouch.com',
+    path: '/registry'
   },
 
   search: {

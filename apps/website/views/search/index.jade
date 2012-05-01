@@ -2,23 +2,24 @@ extends ../layout
 
 block content
 
+  .row
+    .span12
+      .search-info Searched for <strong>#{q}</strong> and found <strong>#{ result.count } packages</strong>
 
-  .container
+  .row
+    for package in result.packages
+      .span6
+        .package.small
+          h3
+            a( href=url('packages_show', { id: package.name } ) )= package.name
+            &nbsp;
+            span.version - #{package.latest} 
 
-    .row
-      .span12
-        .search-info Searched for <strong>#{q}</strong> and found <strong>#{ result.count } packages</strong>
+          .author #{package.author}
 
-    .row
-      for package in result.packages
-        .span6
-          .package-small
-            h3
-              a= package.name
+          .description= package.description
 
-            p= package.description
-
-            ul
-              for tag in package.tags
-                li
-                  a(href=url('search_index') + '?q=' + tag)= tag
+          .tags
+            for tag in package.tags
+              a.btn.btn-mini(href=url('search_index') + '?q=' + tag)= tag
+              &nbsp;

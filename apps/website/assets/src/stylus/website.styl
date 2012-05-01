@@ -1,21 +1,54 @@
 a
-  color: #049D00
+  color: #33CC00
 
 header
   text-align: center
-  padding: 1em 0
+  padding: 2em 0
 
   h1
     margin-bottom: 1em
-    font-size: 1.20em
-    text-transform: uppercase
 
+    a, a:hover
+      text-decoration: none
+      color: black
 
 .search-info
   margin-bottom: 10px
 
-.package-small
-  border: 1px solid whitesmoke
-  padding: 10px
-  height: 130px
+.package
+  position: relative
   margin-bottom: 20px
+  background: #FCFCFC
+  border: 1px solid #ECECEC
+  padding: 10px
+
+.package.small
+  height: 110px
+
+  h3
+    font-weight: normal
+    font-size: 1.5em
+    margin-bottom: .5em
+
+    .version
+      font-size: .80em
+      color: silver
+
+  .author
+    font-size: .9em
+    position: absolute
+    top: 10px
+    right: 10px
+    color: silver
+
+  .description
+    height: 3em
+    overflow: hidden
+    margin-bottom: 1em
+
+  .tags
+    position: absolute
+    bottom: 10px
+    left: 10px
+    height: 20px
+    overflow: hidden

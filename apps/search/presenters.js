@@ -1,10 +1,8 @@
 var _ = require('underscore');
 
 var package = function(data){
-  return {
-    name: data._source.name,
-    tags: data._source.tags
-  };
+  console.log( data._source );
+  return data._source;
 };
 
 var result = function(data){
