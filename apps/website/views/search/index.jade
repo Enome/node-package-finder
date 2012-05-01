@@ -1,0 +1,9 @@
+extends ../layout
+
+block content
+
+  h1 Found #{ result.total_rows } packages in #{ result.fetch_duration } ms
+
+  for package in result.rows
+    
+    h2= package.doc.name

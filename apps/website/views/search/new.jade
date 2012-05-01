@@ -1,0 +1,8 @@
+extends ../layout
+
+block content
+  h1 search
+
+  form(action=url('search_index'), method='get')
+    input( type='text', name='q' )
+    button( type='submit' ) Search
