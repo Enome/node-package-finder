@@ -1,0 +1,4 @@
+form.form-horizontal(action=url('search_index'), method='get')
+  .input-append
+    input( type='text', name='q', value=locals.q )
+    button.btn( type='submit' ) Search

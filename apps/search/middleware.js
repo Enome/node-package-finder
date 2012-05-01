@@ -21,6 +21,7 @@ module.exports = {
       };
 
       res.local('result', result);
+      res.local('q', q);
 
       return next();
 

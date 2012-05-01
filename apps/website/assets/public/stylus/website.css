@@ -1,0 +1,21 @@
+a {
+  color: #049d00;
+}
+header {
+  text-align: center;
+  padding: 1em 0;
+}
+header h1 {
+  margin-bottom: 1em;
+  font-size: 1.2em;
+  text-transform: uppercase;
+}
+.search-info {
+  margin-bottom: 10px;
+}
+.package-small {
+  border: 1px solid #f5f5f5;
+  padding: 10px;
+  height: 130px;
+  margin-bottom: 20px;
+}

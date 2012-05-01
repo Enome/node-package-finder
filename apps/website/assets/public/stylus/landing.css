@@ -1,3 +1,15 @@
 .landing {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin-left: -175px;
+  margin-top: -85px;
+  height: 130px;
+  width: 350px;
   text-align: center;
+}
+.landing h1 {
+  margin-bottom: 1em;
+  font-size: 1.2em;
+  text-transform: uppercase;
 }
