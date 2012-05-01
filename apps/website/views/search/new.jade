@@ -1,9 +1,9 @@
 extends ../layout
 
 block content
-  .container
-    .row
-      .span12
-        form(action=url('search_index'), method='get')
-          input( type='text', name='q' )
-          button.btn( type='submit' ) Search
+  div.landing
+    h1 Node Package Finder
+    form.form-horizontal(action=url('search_index'), method='get')
+      .input-append
+        input( type='text', name='q' )
+        button.btn( type='submit' ) Search
