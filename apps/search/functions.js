@@ -1,35 +1,23 @@
 var http = require('http');
+var settings = require('../../settings').search;
+var _ = require('underscore');
+var request = require('request');
 
 module.exports = {
 
   search: function(q, callback){
 
-    var options = {
-      host: '0.0.0.0',
-      port: '5984',
-      path: '/_fti/local/npm/_design/general/search?q=' + encodeURIComponent(q) + '&include_docs=true',
-      method: 'GET'
-    };
+    var url = 'http://' + settings.host + ':' + settings.port + '/' + settings.path + '/_search?q=' + encodeURIComponent(q) + '&size=100'
 
-    var get = http.request(options, function(res){
+    request.get(url, function(error, response, body){
 
-      var body = '';
-
-      res.on('error', function(error){ callback(error); });
-      res.on('data', function(chunk){ body += chunk; });
-      res.on('end', function(){ 
-
-        try {
-          callback( null, JSON.parse(body) ); 
-        } catch(e) {
-          callback('Json: parse error');
-        };
-
-      });
+      try {
+        callback( null, JSON.parse(body) ); 
+      } catch(e) {
+        callback('Json: parse error');
+      };
 
     });
-
-    get.end();
 
   }
 

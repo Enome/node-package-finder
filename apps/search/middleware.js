@@ -8,11 +8,7 @@ module.exports = {
     var q = req.query.q;
 
     if( !q ){
-
-      res.render('search/empty');
-
-      return next();
-
+      return res.render('search/empty');
     };
 
     search( q, function(err, data){

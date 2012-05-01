@@ -1,37 +1,17 @@
+var _ = require('underscore');
+
 var package = function(data){
-
-  var tags = function(){
-    if (data.doc['dist-tags'] && data.doc['dist-tags'].latest) {
-      console.log( data.doc.versions[data.doc['dist-tags'].latest].tags  );
-      return data.doc.versions[data.doc['dist-tags'].latest].tags || [];
-    } else {
-      return [];
-    };
-  };
-
   return {
-    name: data.doc.name,
-    description: data.doc.description,
-    tags: tags()
+    name: data._source.name,
+    tags: data._source.tags
   };
-
 };
 
 var result = function(data){
-
-  var packages = [];
-
-  data.rows.forEach( function( data ){
-
-    packages.push( package( data ) );
-
-  });
-
   return {
-    count: data.total_rows,
-    packages: packages
+    count: data.hits.total,
+    packages: _.map( data.hits.hits, package ) 
   };
-
 };
 
 module.exports = {
