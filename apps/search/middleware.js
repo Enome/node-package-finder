@@ -1,4 +1,5 @@
 var search = require('./functions').search;
+var result = require('./presenters').result;
 
 module.exports = {
 
@@ -14,13 +15,14 @@ module.exports = {
 
     };
 
-    search( q, function(err, result){
+    search( q, function(err, data){
 
       if( err ){
         return next( { type:'search', error: err });
       };
 
-      res.local('result', result);
+      res.local('result', result(data));
+
       res.local('q', q);
 
       return next();

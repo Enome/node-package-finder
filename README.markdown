@@ -1,4 +1,4 @@
-# Node Package Search
+# Node Package Finder
 
 Site for searching the npm registry using express.js and couchdb-lucene.
 

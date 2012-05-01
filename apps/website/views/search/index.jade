@@ -5,15 +5,21 @@ block content
 
   .container
 
+    -console.log( result );
     .row
       .span12
-        .search-info Searched for <strong>#{q}</strong> and found <strong>#{ result.total_rows } packages</strong>
+        .search-info Searched for <strong>#{q}</strong> and found <strong>#{ result.count } packages</strong>
 
     .row
-      for package in result.rows
+      for package in result.packages
         .span6
           .package-small
             h3
-              a= package.doc.name
+              a= package.name
 
-            p= package.doc.description
+            p= package.description
+
+            ul
+              for tag in package.tags
+                li
+                  a(href=url('search_index') + '?q=' + tag)= tag
