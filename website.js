@@ -8,8 +8,8 @@ app.configure(function(){
   app.set('view options', { layout: false });
   app.use(express.bodyParser());
   app.use(express.methodOverride());
+  app.use(express.static(__dirname + '/apps/website/assets/public'));
   app.use(app.router);
-  //app.use(express.static(__dirname + '/public'));
 });
 
 

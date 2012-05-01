@@ -8,7 +8,7 @@ module.exports = {
 
     if( !q ){
 
-      res.local('packages', []);
+      res.render('search/empty');
 
       return next();
 
