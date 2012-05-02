@@ -34,7 +34,7 @@ var stars = function(doc){
 var author = function(doc){
 
   if( doc.author ){
-    return doc.author.name
+    return doc.author
   };
 
 };

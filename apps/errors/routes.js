@@ -12,10 +12,10 @@ module.exports = {
     });
 
     // Error
-    
     app.error( function(err, req, res, next){
 
-      /*var error;
+    /*
+      var error;
 
       if( err.type === 'http' ){
         error = { type: 'http', code: err.error };

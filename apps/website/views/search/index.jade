@@ -1,25 +1,22 @@
 extends ../layout
 
 block content
+  include ../packages/mixins
 
-  .row
-    .span12
-      .search-info Searched for <strong>#{q}</strong> and found <strong>#{ result.count } packages</strong>
+  .search-info Searched for <strong>#{q}</strong> and found <strong>#{ result.count } packages</strong>
 
   .row
     for package in result.packages
       .span6
-        .package.small
+        .box.search-result
           h3
             a( href=url('packages_show', { id: package.name } ) )= package.name
             &nbsp;
             span.version - #{package.latest} 
 
-          .author #{package.author}
+          if(package.author)
+            mixin person(package.author)
 
           .description= package.description
 
-          .tags
-            for tag in package.tags
-              a.btn.btn-mini(href=url('search_index') + '?q=' + tag)= tag
-              &nbsp;
+          include ../packages/_tags

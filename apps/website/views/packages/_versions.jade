@@ -1,0 +1,4 @@
+ul
+  for version in package.versions
+    li
+      a( href=url('packages_attachment', { version: version.version, name: version.name } ) )= version.version

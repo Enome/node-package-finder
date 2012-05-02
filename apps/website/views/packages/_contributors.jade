@@ -1,0 +1,6 @@
+include mixins
+
+ul
+  for contrib in package.contributors
+    li
+      mixin person(contrib)

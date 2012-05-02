@@ -1,56 +1,68 @@
 a {
   color: #3c0;
 }
+a[target='_blank'] {
+  color: #c0c0c0;
+}
+h1,
+h2,
+h3 {
+  margin-bottom: 0.5em;
+}
 header {
   text-align: center;
   padding: 2em 0;
 }
-header h1 {
-  margin-bottom: 1em;
-}
-header h1 a,
-header h1 a:hover {
+header a,
+header a:hover {
   text-decoration: none;
   color: #000;
 }
-.search-info {
-  margin-bottom: 10px;
+header a span,
+header a:hover span {
+  color: #3c0;
 }
-.package {
+.box {
   position: relative;
   margin-bottom: 20px;
   background: #fcfcfc;
   border: 1px solid #ececec;
   padding: 10px;
 }
-.package.small {
+.search-info {
+  margin-bottom: 10px;
+}
+.search-result {
   height: 110px;
 }
-.package.small h3 {
+.search-result h3 {
   font-weight: normal;
   font-size: 1.5em;
   margin-bottom: 0.5em;
 }
-.package.small h3 .version {
+.search-result h3 .version {
   font-size: 0.8em;
   color: #c0c0c0;
 }
-.package.small .author {
+.search-result .person {
+  text-align: right;
   font-size: 0.9em;
   position: absolute;
   top: 10px;
   right: 10px;
   color: #c0c0c0;
 }
-.package.small .description {
-  height: 3em;
-  overflow: hidden;
+.search-result .description {
   margin-bottom: 1em;
 }
-.package.small .tags {
-  position: absolute;
-  bottom: 10px;
-  left: 10px;
-  height: 20px;
-  overflow: hidden;
+.tags a {
+  border-radius: 4px;
+  padding: 2px 6px;
+  font-size: 11px;
+  line-height: 14px;
+  display: inline-block;
+  text-decoration: none;
+  background: #d6ffc8;
+  color: #008000;
+  margin: 0 2px 2px 0;
 }

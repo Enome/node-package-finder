@@ -1,0 +1,7 @@
+include ../search/mixins
+
+mixin person(person)
+  .person
+    mixin link(person.name)
+    br
+    a(href=person.url, target='_blank')= person.url

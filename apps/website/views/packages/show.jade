@@ -1,7 +1,47 @@
 extends ../layout
 
 block content
+  include mixins
+
   .row
-    .span12
-      .package
-        h1 test
+    .span9
+      .box
+        if package.readme
+          .markdown!= markdown( package.readme )
+
+        else
+          h1= package.name
+          p= package.description
+
+    .span3
+      .box
+        h3 General
+        dl
+          if package.author
+            dt Author
+            dd
+              mixin person(package.author)
+
+          dt Repository
+          dd
+            a(href=package.repository.url.replace('git://', 'http://'), target='_blank')= package.repository.url
+
+          if package.homepage
+            dt Homepage
+            dd
+              a(href=package.homepage)= package.homepage
+
+      .box
+        h3 Versions
+        include _versions
+
+      if package.tags.length
+        .box
+          h3 Tags
+          include _tags
+
+
+      if package.contributors
+        .box
+          h3 Contributors
+          include _contributors

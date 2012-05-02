@@ -18,7 +18,6 @@ app.configure(function(){
   app.use(app.router);
 });
 
-
 // Routes
 
 require('./apps/search/routes'  ).init( app );
@@ -29,6 +28,7 @@ require('./apps/errors/routes'  ).init( app ); //Need to be last
 // Helpers
 
 require('./apps/website/helpers').init( app );
+require('./apps/general/helpers').init( app );
 
 
 app.listen(3000);

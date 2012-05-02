@@ -1,7 +1,6 @@
 var _ = require('underscore');
 
 var package = function(data){
-  console.log( data._source );
   return data._source;
 };
 
