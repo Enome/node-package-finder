@@ -2,4 +2,11 @@ extends ../layout
 
 block content
   .box
-    h1 Error #{error.code}
+    h1 Error #{code}
+    if locals.stack
+      p 
+        | Please open an issue on  
+        a(href='https://github.com/Enome/node-package-finder/issues') https://github.com/Enome/node-package-finder/issues  
+        | with the error and the url you are trying to visit.
+
+      pre= stack

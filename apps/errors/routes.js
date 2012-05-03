@@ -7,27 +7,30 @@ module.exports = {
     // 404
     
     app.all( '*', function(req, res){
-      res.local('error', { type: 'http', code: 404 });
-      res.render('errors/index', { status: 404 } );
+      var code = 404;
+      res.local('error', { type: 'http', code: code });
+      res.local('code', code );
+      res.render('errors/index', { status: code } );
     });
 
     // Error
     app.error( function(err, req, res, next){
 
-      var error;
+      var code;
 
       if( err.type === 'http' ){
-        error = { type: 'http', code: err.error };
+        code = err.error;
       } 
       else {
-        error = { type: 'general', code: 500 };
+        code = 500;
       };
 
-      res.local('error', error );
-      res.render('errors/index', { status: error.code } );
+      if(err.error){
+        res.local('stack', JSON.stringify(err.error, null, 2) );
+      };
 
-      //express.errorHandler( { showStack: true, dumpException: true } )(err, req, res, next)
-
+      res.local('code', code );
+      res.render('errors/index', { status: code } );
 
     });
 
