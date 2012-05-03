@@ -22,9 +22,17 @@ block content
             dd
               mixin person(package.author)
 
-          dt Repository
-          dd
-            a(href=package.repository.url.replace('git://', 'http://'), target='_blank')= package.repository.url
+          if package.time
+            dt Modified
+            dd= fromNow(package.time.modified)
+
+            dt Created
+            dd= prettyDate(package.time.created)
+
+          if package.repository && package.repository.url
+            dt Repository
+            dd
+              a(href=package.repository.url.replace('git://', 'http://'), target='_blank')= package.repository.url
 
           if package.homepage
             dt Homepage
@@ -39,7 +47,6 @@ block content
         .box
           h3 Tags
           include _tags
-
 
       if package.contributors
         .box

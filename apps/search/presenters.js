@@ -1,7 +1,18 @@
 var _ = require('underscore');
+var maps = require('../packages/maps');
 
 var package = function(data){
-  return data._source;
+
+  var doc = data._source.doc;
+
+  return {
+    name: doc.name,
+    description: doc.description,
+    author: doc.author,
+    tags: maps.tags(doc),
+    latest: maps.latestVersion(doc)
+  };
+
 };
 
 var result = function(data){

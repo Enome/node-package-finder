@@ -1,4 +1,4 @@
 ul
-  for version in package.versions
+  for version in package.versions.slice(0, 10)
     li
       a( href=url('packages_attachment', { version: version.version, name: version.name } ) )= version.version

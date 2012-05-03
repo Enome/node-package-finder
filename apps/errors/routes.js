@@ -14,7 +14,6 @@ module.exports = {
     // Error
     app.error( function(err, req, res, next){
 
-    /*
       var error;
 
       if( err.type === 'http' ){
@@ -26,9 +25,8 @@ module.exports = {
 
       res.local('error', error );
       res.render('errors/index', { status: error.code } );
-      */
 
-      express.errorHandler( { showStack: true, dumpException: true } )(err, req, res, next)
+      //express.errorHandler( { showStack: true, dumpException: true } )(err, req, res, next)
 
 
     });
