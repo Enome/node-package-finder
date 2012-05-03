@@ -10,5 +10,5 @@ I created a [tiny project](https://github.com/Enome/npm-elasticsearch-index) wit
 
 ```shell
 npm install
-make server-dev
+make server
 ```

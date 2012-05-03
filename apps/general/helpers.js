@@ -1,4 +1,3 @@
-var markdown = require('markdown').markdown;
 var moment = require('moment');
 var marked = require('marked');
 
