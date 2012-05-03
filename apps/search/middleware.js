@@ -8,7 +8,9 @@ module.exports = {
     var q = req.query.q;
 
     if( !q ){
-      return res.render('search/empty');
+      res.local('result', { packages: [], count: 0 })
+      res.local('q', q);
+      return next();
     };
 
     search( q, function(err, data){

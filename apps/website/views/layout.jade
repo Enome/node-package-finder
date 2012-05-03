@@ -1,17 +1,12 @@
-!!! 5
-html
-  head
-    title Node Package Search
-    link(rel='stylesheet', href='/css/bootstrap.css')
-    link(rel='stylesheet', href='/css/bootstrap-responsive.css')
-    link(rel='stylesheet', href='/stylus/website.css')
-  body
-    header
-      h1 
-        a( href=url('search_new') ) Node <span>Package</span> Finder
-      include search/_form
+extends base
 
-    .container
-      .row
-        .span12
-          block content
+block body
+  header
+    h1 
+      a( href=url('search_new') ) Node <span>Package</span> Finder
+    include search/_form
+
+  .container
+    .row
+      .span12
+        block content

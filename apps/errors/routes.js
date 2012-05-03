@@ -25,8 +25,8 @@ module.exports = {
         code = 500;
       };
 
-      if(err.error){
-        res.local('stack', JSON.stringify(err.error, null, 2) );
+      if(err){
+        res.local('stack', err.stack || JSON.stringify(err, null, 2) );
       };
 
       res.local('code', code );
