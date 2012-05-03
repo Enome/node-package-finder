@@ -2,13 +2,11 @@
 
 Site for searching the npm registry using express.js and elasticsearch. The goal is to search npm without touching the database. This project relies on an elasticsearch index to search and store package information. We are only using the npm database to grab the attachments.
 
-## Install
+## Elasticsearch
 
-### elasticsearch
+I created a [tiny project](https://github.com/Enome/npm-elasticsearch-index) with a bunch of scripts to turn the npm registry into an es index.  Don't forget to change the search in settings.js to the url of your elasticsearch server.
 
-I created a [tiny project](https://github.com/Enome/npm-elasticsearch-index) with a bunch of scripts to turn the npm registry into an es index.  Dont forget to change the search in setting.js to the url of your elasticsearch server.
-
-## Run the app
+## Install and run the app
 
 ```shell
 npm install
