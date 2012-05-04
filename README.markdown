@@ -15,4 +15,4 @@ make server
 
 ## Demo
 
-Demo can be found [here](http://packagefinder-enome.dotcloud.com). It might be a little slow because it's running on a free hosting.
+Demo can be found [here](http://packagefinder1-enome.dotcloud.com). It might be a little slow because it's running on a free hosting.
