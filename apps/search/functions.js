@@ -22,8 +22,6 @@ module.exports = {
 
     request(options, function(error, response, body){
 
-      console.log( body );
-
       if(error){
         return callback( error );
       };
