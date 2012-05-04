@@ -12,3 +12,7 @@ I created a [tiny project](https://github.com/Enome/npm-elasticsearch-index) wit
 npm install
 make server
 ```
+
+## Demo
+
+Demo can be found [here](http://packagefinder-enome.dotcloud.com). It might be a little slow because it's running on a free hosting.
