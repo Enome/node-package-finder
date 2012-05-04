@@ -1,21 +1,34 @@
-var http = require('http');
 var settings = require('../../settings');
-var _ = require('underscore');
 var request = require('request');
 
 module.exports = {
 
   search: function(q, callback){
 
-    var url = settings.search + '/_search?q=' + encodeURIComponent(q) + '&size=150'
+    var options = { 
+      method: 'POST',
+      json: {
+        size: 100,
+        query: { 
+          query_string: {
+            fields: ['name', 'author', 'tags'],
+            query: q
+          }
+        }
+      },
+      uri: settings.search + '/_search',
+      timeout: 60000 
+    };
 
-    request.get(url, function(error, response, body){
+    request(options, function(error, response, body){
+
+      console.log( body );
 
       if(error){
         return callback( error );
       };
 
-      callback( null, JSON.parse(body) );
+      callback( null, body );
 
     });
 
